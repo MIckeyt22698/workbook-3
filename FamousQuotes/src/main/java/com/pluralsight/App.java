@@ -1,10 +1,9 @@
 package com.pluralsight;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         String[] quotes = {
                 "\"Carpe diem.\" — Horace",
@@ -19,25 +18,34 @@ public class App {
                 "\"Think different.\"  — Apple"
         };
         Scanner keyStrokes = new Scanner(System.in);
+        String yesOrNo = "y";
+
+        while (yesOrNo.equalsIgnoreCase("y")) {
+            System.out.println("Choose a number between 1 and 10 for a quote!");
+
+            try {
+                int quoteNumber = keyStrokes.nextInt();
+                keyStrokes.nextLine();
+                System.out.println(quotes[quoteNumber - 1]);
+
+            } catch (Exception e) {
+                System.out.println("Your number was out of range!");
+            }
 
 
-        System.out.println("Choose a number between 1 and 10 for a quote!");
-        try{
-        int quoteNumber = keyStrokes.nextInt();
+            System.out.println("Would you like another quote? (y/n)");
+            yesOrNo = keyStrokes.nextLine().trim();
 
-        System.out.println(quotes[quoteNumber - 1]);
+
+            if (yesOrNo.equalsIgnoreCase("n")) {
+
+                System.out.println("Thank you for using the quote generator!");
+                break;
+
+            }
+
+
         }
-
-        catch (Exception e) {
-            System.out.println("Your number was out of range!");
-        }
-
-
-
-
-
-
-
-
+    }
 }
-}
+
