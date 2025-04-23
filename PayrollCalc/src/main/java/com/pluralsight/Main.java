@@ -17,17 +17,18 @@ public class Main {
 
             while ((line = bufReader.readLine()) != null) {
                 System.out.println(line);
-                String[] tokens = line.split("//|");
+                String[] tokens = line.split("\\|");
 
                 int id = Integer.parseInt(tokens[0].trim());
-                String name = line[1].trim();
-                double hourlyRate = Double.parseDouble(tokens[2].trim());
+                String name = tokens[1].trim();
+                double payRate = Double.parseDouble(tokens[2].trim());
                 double hoursWorked = Double.parseDouble(tokens[3].trim());
 
-                Employee emp = new Employee(id, String name, hourlyRate, hoursWorked);
+                Employee emp = new Employee(id, name, payRate, hoursWorked);
 
-                System.out.println("\"ID: %d | Name: %-20s | Gross Pay: $%.2f%n\","),
+                System.out.printf("ID: %d | Name: %-20s | Gross Pay: $%.2f%n",
                         emp.getId(), emp.getName(), emp.getGrossPay());
+
 
 
             }

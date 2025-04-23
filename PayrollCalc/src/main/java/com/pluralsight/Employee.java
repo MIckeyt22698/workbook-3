@@ -8,7 +8,7 @@ public class Employee {
     private double payRate;
 
 
-    public Employee(int id, double payRate, double hoursWorked, String name) {
+    public Employee(int id, String name, double payRate, double hoursWorked) {
         this.id = id;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
@@ -16,7 +16,7 @@ public class Employee {
 
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
