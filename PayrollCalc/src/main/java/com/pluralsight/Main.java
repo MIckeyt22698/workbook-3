@@ -12,6 +12,7 @@ public class Main {
 
             FileReader fileReader = new FileReader("DataFiles/employees.csv");
             BufferedReader bufReader = new BufferedReader(fileReader);
+            bufReader.readLine();
             String line;
 
 
@@ -28,8 +29,6 @@ public class Main {
 
                 System.out.printf("ID: %d | Name: %-20s | Gross Pay: $%.2f%n",
                         emp.getId(), emp.getName(), emp.getGrossPay());
-
-
 
             }
             bufReader.close();
