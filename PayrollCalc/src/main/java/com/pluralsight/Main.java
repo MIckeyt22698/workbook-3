@@ -20,14 +20,14 @@ public class Main {
 
             FileReader fileReader = new FileReader("DataFiles/" + inputFile);
             BufferedReader bufReader = new BufferedReader(fileReader);
-            String line;
+
 
             FileWriter fileWriter = new FileWriter("DataFiles/" + outputFile);
             fileWriter.write("id|name|gross pay\n");
 
             bufReader.readLine();
 
-
+            String line;
             while ((line = bufReader.readLine()) != null) {
                 System.out.println(line);
                 String[] tokens = line.split("\\|");
