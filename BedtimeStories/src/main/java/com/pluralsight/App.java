@@ -13,13 +13,10 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         String storyName = scanner.nextLine();
-
-
-
-
+        
         try {
 
-            FileInputStream fis = new FileInputStream("DataFiles/" +storyName + ".txt");
+            FileInputStream fis = new FileInputStream("DataFiles/" + storyName + ".txt");
             Scanner keyStrokes = new Scanner(fis);
             String storyChoice;
 
